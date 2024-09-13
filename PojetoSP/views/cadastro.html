@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Usuário</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 10;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #000;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+
+        }
+
+        h1{
+            position: absolute;
+            top: 160px;
+            text-align: center;
+            color: #fff;
+            background: #6f42c1;
+            padding: 10px;
+        }
+
+        input[type="number"]{
+            width: 20%;
+            padding: 3px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="text"] {
+            width: 20%;
+            padding: 3px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #6f42c1;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+        background-color: #5a2d8b;
+        }
+    </style>
+</head>
+<body>
+<h1>Insira os Dados do Usuário</h1>
+<form action="/api/users" method="post">
+
+    <label for="id">CPF:</label>
+    <input type="number" id="cpf" name="cpf" required><br><br>
+
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
