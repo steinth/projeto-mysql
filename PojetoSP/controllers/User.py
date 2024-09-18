@@ -39,3 +39,6 @@ def removerUmUsuario(id):
     '''
     removerUmUsuarioService(id)
     return make_response(jsonify(mensagem="Paciente removido com sucesso"))
+
+def atualizarUsuario():
+    pass

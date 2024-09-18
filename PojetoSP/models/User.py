@@ -39,4 +39,4 @@ def removerUsuario(id):
     conn.close()
 
 def atualizarUsuario(id, usuario):
-    pass
+    pass #

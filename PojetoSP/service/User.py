@@ -8,3 +8,6 @@ def listarTodosUsuariosService():
 
 def removerUmUsuarioService(id):
     return removerUsuario(id)
+
+def atualizarUsuarioService():
+    pass
