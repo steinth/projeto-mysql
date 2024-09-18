@@ -2,16 +2,12 @@ from config import get_db_connection
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-def salvarUsuario(usuario):
+def salvarUsuario(nome, email, senha, cpf):
     """
     Salva um novo usuário no banco de dados.
-    Argumentos:
-    - usuario: Um dicionário contendo as informações do usuário (email, senha e cpf).
     """
-    nome = usuario.get('nome')
-    email = usuario.get('email')
-    senhaHashed = generate_password_hash(usuario.get('senha'), method='pbkdf2:sha256')
-    cpf = usuario.get('cpf')
+
+    senhaHashed = generate_password_hash(senha, method='pbkdf2:sha256')
 
     # Conexão com o banco de dados
     conn = get_db_connection()

@@ -1,9 +1,7 @@
 from models.User import  salvarUsuario, listagemTodosUsuarios, removerUsuario
 
-def salvarUsuarioService(usuario):
-    if 'email' not in usuario or 'senha' not in usuario or 'cpf' not in usuario:    #se estiver falntando algum dado vai retornar um erro
-        raise ValueError("Todos os campos são obrigatórios!")
-    return salvarUsuario(usuario)
+def salvarUsuarioService(nome, email, senha, cpf):
+    return salvarUsuario(nome, email, senha, cpf)
 
 def listarTodosUsuariosService():
     return listagemTodosUsuarios()

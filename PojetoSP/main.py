@@ -3,7 +3,7 @@ from controllers.User import salvarUsuario, listarTodosUsuarios, removerUmUsuari
 
 blueprint = Blueprint('blueprint', __name__)
 
-blueprint.route('/cadastro', methods=['POST'])(salvarUsuario) # endpoint que chama a função de salvar o usuario
+blueprint.route('/cadastro', methods=['GET', 'POST'])(salvarUsuario) # endpoint que chama a função de salvar o usuario    http://localhost:8080/cadastro
 blueprint.route('/usuarios', methods=['GET'])(listarTodosUsuarios) # endpoint que chama a função de mostrar todos os usuarios da tabela usuario
 blueprint.route('/usuario/<int:id>', methods=['DELETE'])(removerUmUsuario)
 
