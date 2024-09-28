@@ -8,7 +8,7 @@
         body {
             display: flex;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #10001f;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -16,24 +16,31 @@
         }
 
         form {
-            background: #fff;
+            background: #e8ddfd;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px #000;
+            box-shadow: 0px 0px 10px 0px #ffffff;
             text-align: center;
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
-
+            color: #403866;
+            text-transform: uppercase;
+            display: block;
+            line-height: 1.2;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+        
 
         h1{
             position: absolute;
             top: 160px;
             text-align: center;
-            color: #fff;
+            color: #dacde6;
             background: #6f42c1;
             padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 0px #ffffff;
         }
 
         input[type="number"]{
@@ -57,7 +64,7 @@
             background: #6f42c1;
             color: #fff;
             border: none;
-            border-radius: 3px;
+            border-radius: 20px;
             cursor: pointer;
         }
 
@@ -67,7 +74,7 @@
     </style>
 </head>
 <body>
-<h1>Insira os Dados do Usuario</h1>
+<h1>Insira os dados do paciente</h1>
 <form action="/cadastro" method="POST">
     <label for="name">Nome:</label>
     <input type="text" id="name" name="nome" required><br><br>

@@ -1,5 +1,5 @@
-from flask import request, make_response, jsonify, render_template, Blueprint
-from service.User import salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
+from flask import request, make_response, jsonify, render_template, Blueprint, redirect, url_for
+from service.User import atualizarUsuarioService, salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
 
 
 def salvarUsuario():
@@ -19,7 +19,7 @@ def salvarUsuario():
     cpf = data.get('cpf')
 
     salvarUsuarioService(nome, email, senha, cpf)  # Chama o service para processar a lógica de salvar
-    return make_response(jsonify(mensagem="Usuário salvo com sucesso!"), 201)
+    return redirect(url_for('blueprint.pagina_de_navegacao'))
 
 
 def listarTodosUsuarios():
@@ -27,9 +27,8 @@ def listarTodosUsuarios():
     endpoint: .../usuarios
     metodo: GET
     '''
-    return make_response(
-        jsonify(mensagem="Lista de usuarios",
-                usuario=listarTodosUsuariosService()))
+    pacientes = listarTodosUsuariosService()
+    return render_template('lista_pacientes.html', pacientes=pacientes)
 
 
 def removerUmUsuario(id):
@@ -38,7 +37,14 @@ def removerUmUsuario(id):
     metodo: DELETE
     '''
     removerUmUsuarioService(id)
-    return make_response(jsonify(mensagem="Paciente removido com sucesso"))
+    return redirect(url_for('blueprint.pagina_de_navegacao'))
 
-def atualizarUsuario():
-    pass
+
+# sem tempo pra fazer uma funcao atualizar 
+def atualizarUsuario(id):
+    '''
+    endpoint .../atualizar/<int:id>
+    metodo: UPDATE
+    '''
+    atualizarUsuarioService(id)
+    return redirect(url_for('blueprint.'))

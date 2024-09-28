@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+    <style>
+        body{
+            background-color: #10001f;
+        }
+
+        h1{
+            position: relative;
+            color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 18px;
+            text-align: left;
+            background-color: #b6a3c9;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #b6a3c9;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1a1a;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cpf</th>
+            </tr>
+        </thead>
+        <body>
+            {% for paciente in pacientes%}
+            <tr>
+                <td>{{paciente['id']}}</td>
+                <td>{{paciente['nome']}}</td>
+                <td>{{paciente['email']}}</td>
+                <td>{{paciente['cpf']}}</td>
+                <td>
+                    <form action="/usuario/{{ paciente['id'] }}" method="post" style="display:inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Remover</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor%}
+        </body>
+    </table>
+</body>
+</html>
