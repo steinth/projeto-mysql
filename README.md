@@ -19,7 +19,7 @@ Este é o projeto desenvolvido para o trabalho da faculdade, utilizando **Python
 
 ### Pré-requisitos
 
-- Python 3.x
+- Python 3.7+
 - MySQL instalado (pode ser gerenciado via [XAMPP](https://www.apachefriends.org/index.html))
 - Pip para gerenciar as dependências
 
