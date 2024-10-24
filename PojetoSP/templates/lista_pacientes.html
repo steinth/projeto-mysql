@@ -53,7 +53,6 @@
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Cpf</th>
             </tr>
         </thead>
         <body>
@@ -62,13 +61,14 @@
                 <td>{{paciente['id']}}</td>
                 <td>{{paciente['nome']}}</td>
                 <td>{{paciente['email']}}</td>
-                <td>{{paciente['cpf']}}</td>
                 <td>
                     <form action="/usuario/{{ paciente['id'] }}" method="post" style="display:inline;">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit">Remover</button>
                     </form>
                 </td>
+                <td><a href="/informacoes/{{ paciente['id'] }}">Ver Detalhes</a></td>
+
             </tr>
             {% endfor%}
         </body>

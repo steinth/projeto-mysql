@@ -38,5 +38,24 @@ def removerUsuario(id):
     conn.commit()
     conn.close()
 
-def atualizarUsuario(id, usuario):
+def atualizarUmUsuario(id, nome, email, cpf):
+    #conn = get_db_connection()
+    #cursor = conn.cursor()
+    #cursor.execute('UPDATE usuario SET nome = %s, email = %s, cpf = %s WHERE id = %s', (nome, email, cpf, id))
+    #conn.commit()
+    #conn.close()
+    pass
+
+def buscarPorId(id):
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute('SELECT * FROM usuario WHERE id = %s', (id,))
+    paciente = cursor.fetchone()
+    conn.close()
+    return paciente
+
+def exibirInformacoesUsuario(id):
+#    conn = get_db_connection()
+#    cursor = conn.cursor()
+#    cursor.execute('SELECT nome, email, cpf FROM usuario WHERE id = %s',(id))
     pass

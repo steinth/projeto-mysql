@@ -1,5 +1,5 @@
 from flask import request, make_response, jsonify, render_template, Blueprint, redirect, url_for
-from service.User import atualizarUsuarioService, salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
+from service.User import atualizarUsuarioService, buscarPorIdService, exibirInformacoesService, salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
 
 
 def salvarUsuario():
@@ -22,6 +22,25 @@ def salvarUsuario():
     return redirect(url_for('blueprint.pagina_de_navegacao'))
 
 
+def exibirInformacoes(id):
+    usuario = exibirInformacoesService(id)
+    return render_template('informacoesUsuario.html', usuario = usuario)
+
+
+def atualizarUsuario(id):
+#
+#    if request.method == 'GET':
+#        paciente = buscarPorIdService(id)
+#        return render_template('atualizarUsuario.html', paciente=paciente)
+#
+#    elif request.method == 'PUT':
+#        nome = request.form.get('nome')
+#        email = request.form.get('email')
+#        cpf = request.form.get('cpf')
+#        atualizarUsuarioService(id, nome, email, cpf)
+#        return redirect(url_for('blueprint.pagina_de_navegacao'))
+    pass
+
 def listarTodosUsuarios():
     '''
     endpoint: .../usuarios
@@ -40,11 +59,3 @@ def removerUmUsuario(id):
     return redirect(url_for('blueprint.pagina_de_navegacao'))
 
 
-# sem tempo pra fazer uma funcao atualizar 
-def atualizarUsuario(id):
-    '''
-    endpoint .../atualizar/<int:id>
-    metodo: UPDATE
-    '''
-    atualizarUsuarioService(id)
-    return redirect(url_for('blueprint.'))
