@@ -2,7 +2,7 @@ from config import get_db_connection
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-def salvarUsuario(nome, email, senha, cpf):
+def salvarUsuario(nome, email, senha, cpf, servico):
     """
     Salva um novo usuário no banco de dados.
     """
@@ -15,8 +15,8 @@ def salvarUsuario(nome, email, senha, cpf):
     
     # Inserção no banco de dados sem criptografia
     cursor.execute(
-        'INSERT INTO usuario (nome, email, senha, cpf) VALUES (%s, %s, %s, %s)',
-        (nome, email, senhaHashed, cpf)
+        'INSERT INTO usuario (nome, email, senha, cpf, servico) VALUES (%s, %s, %s, %s, %s)',
+        (nome, email, senhaHashed, cpf, servico)
     )
     conn.commit()  # Confirma a transação
     conn.close()   # Fecha a conexão
@@ -25,7 +25,7 @@ def salvarUsuario(nome, email, senha, cpf):
 def listagemTodosUsuarios():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute('SELECT id, nome, email, cpf FROM usuario')
+    cursor.execute('SELECT id, nome, email, cpf, servico FROM usuario')
     usuario = cursor.fetchall()
     conn.close()
     return usuario

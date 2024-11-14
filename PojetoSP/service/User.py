@@ -1,7 +1,7 @@
 from models.User import  atualizarUmUsuario, buscarPorId, exibirInformacoesUsuario, salvarUsuario, listagemTodosUsuarios, removerUsuario
 
-def salvarUsuarioService(nome, email, senha, cpf):
-    return salvarUsuario(nome, email, senha, cpf)
+def salvarUsuarioService(nome, email, senha, cpf, servico):
+    return salvarUsuario(nome, email, senha, cpf, servico)
 
 def listarTodosUsuariosService():
     return listagemTodosUsuarios()

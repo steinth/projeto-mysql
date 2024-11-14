@@ -25,8 +25,9 @@ def create_table_if_not_exists():
         nome VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         senha VARCHAR(255) NOT NULL,
-        cpf VARCHAR(11) NOT NULL
-    );
+        cpf VARCHAR(11) NOT NULL,
+        servico VARCHAR(50) NOT NULL
+    );  
     """
     
     cursor.execute(create_table_query)

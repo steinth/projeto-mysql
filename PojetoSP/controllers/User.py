@@ -17,8 +17,9 @@ def salvarUsuario():
     email = data.get('email')
     senha = data.get('senha')
     cpf = data.get('cpf')
+    servico = data.get('servico')
 
-    salvarUsuarioService(nome, email, senha, cpf)  # Chama o service para processar a lógica de salvar
+    salvarUsuarioService(nome, email, senha, cpf, servico)  # Chama o service para processar a lógica de salvar
     return redirect(url_for('blueprint.pagina_de_navegacao'))
 
 
