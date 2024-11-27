@@ -5,9 +5,9 @@ import mysql.connector
 def get_db_connection():
     return mysql.connector.connect(
         host='localhost',
-        user='usuario',  # usuário MySQL
-        password='123',  # senha MySQL
-        database='Pacientes'  # nome do banco de dados
+        user='usuario',
+        password='123',
+        database='Pacientes'
     )    
 
 

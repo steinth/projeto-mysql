@@ -1,5 +1,5 @@
 from flask import request, make_response, jsonify, render_template, Blueprint, redirect, url_for
-from service.User import atualizarUsuarioService, buscarPorIdService, exibirInformacoesService, salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
+from service.User import  buscarPorIdService, exibirInformacoesService, salvarUsuarioService, listarTodosUsuariosService, removerUmUsuarioService
 
 
 def salvarUsuario():
@@ -19,7 +19,7 @@ def salvarUsuario():
     cpf = data.get('cpf')
     servico = data.get('servico')
 
-    salvarUsuarioService(nome, email, senha, cpf, servico)  # Chama o service para processar a lógica de salvar
+    salvarUsuarioService(nome, email, senha, cpf, servico)
     return redirect(url_for('blueprint.pagina_de_navegacao'))
 
 
